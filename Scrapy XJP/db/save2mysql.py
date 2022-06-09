@@ -5,7 +5,7 @@ import pymysql
 class eDatabase:
     def __init__(self,database=None):
         self._database = database
-        self._db = pymysql.connect(host='localhost', user='root', password='1234', port=3306, charset='utf8',database=database)
+        self._db = pymysql.connect(host='localhost', user='xxx', password='xxxx', port=1111, charset='utf8',database=database)
         self._cursion = self._db.cursor()
 
     def showDB(self):
@@ -60,7 +60,7 @@ class eDatabase:
 # return db,cursion
 # if no specific database, then return the mySQL-server, cursion
 def connectDB(database = None):
-    db = pymysql.connect(host='localhost', user='root', password='1234', port=3306, charset='utf8', database=database)
+    db = pymysql.connect(host='localhost', user='root', password='xxx', port=1111, charset='utf8', database=database)
     cursion = db.cursor()
     return db,cursion
 
@@ -172,12 +172,6 @@ def deleteColumn(db,cursion,columnName,table):
     cursion.execute('alter table %s drop column %s'%(table,columnName))
     db.commit()
 
-# def save2SQL(items):
-#     db = pymysql.connect(host='localhost',user='root',password='1234',database='david',port=3306,charset='utf8')
-#     cursion = db.cursor()
-#     insertDataToTable(db,cursion,items)
-#     cursion.close()
-#     db.close()
 
 def main():
     # testDB = eDatabase()
