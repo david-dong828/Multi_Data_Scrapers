@@ -1,4 +1,4 @@
-Purpose: to create a general spider that can scrapy data from interesting websites
+Purpose: to create spiders based on personal interest
 
 Requirement:
 1. spider can scrapy data from URL provided by user
