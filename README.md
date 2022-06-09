@@ -1,9 +1,13 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------
 **Folder Scrapy XJP **
-contains several spiders-- details could see READ ME in that folder
+It contains several spiders
+  - To collect Chinese Top leaders' latest activities, such as 习近平，李克强...
+  - To collect Canada several main cities' real estate Price, Toronto, Ottawa, Vancouver...
+  - To download files from Memorial online course 
+More details could be found in READ ME in that folder
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-munD2LfileDownload 
+**munD2LfileDownload** 
 - It's a spider Used to Download files (pdf , video ) from Memorial University online course wesite https://online.mun.ca/d2l/home
 - Maybe can download ppt files as well (have no chance to test till now)
 - Files after download then save to C:\downloads folder.
