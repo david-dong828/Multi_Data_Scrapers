@@ -44,9 +44,9 @@ from email.mime.text import MIMEText
 
 def sendmail(clientMail,mSubject,mBody):
     try:
-        username = 'infopush.auto@gmail.com'
-        password = 'rqlepdhohratpdmy'
-        mail_from = 'infopush.auto@gmail.com'
+        username = 'infopush.xxx@gmail.com'
+        password = 'xxxxxxx'
+        mail_from = 'infopush.xxx@gmail.com'
         mail_bcc = clientMail
         mail_subject = mSubject
         mail_body = mBody
