@@ -76,7 +76,6 @@ def get_view_link(content):
 def get_download_link_video(soup,cookieJar,basePath):
     videoNameList = []
     videoLinkList = []
-    invalidKeywords = ['/','\\',':','<','>','*','?','"','|']
     try:
         # video name and download link are under tag with class = 'd2l-fileviewer-text'
         item = soup.find(class_='d2l-fileviewer-text')
@@ -137,8 +136,6 @@ def get_download_link(url,cookieJar,basePath):
         return None
 
 def main():
-    # url = 'https://online.mun.ca/d2l/le/content/473399/Home'
-    # url = 'https://online.mun.ca/d2l/le/content/452700/Home'
     url = input('Copy the URL 0f the Course Content Page where you can find the PDFs or Videos: ').strip()
     basePath = 'https://online.mun.ca'
     cookieJar = get_cookie()
