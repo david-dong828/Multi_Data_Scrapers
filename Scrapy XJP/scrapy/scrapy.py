@@ -92,7 +92,14 @@ def get_house_price(url):
     for itme in text:
         cityName = itme[0]
         db_handlers.save2text(cityName, itme)
-        db_handlers.save2sql(itme,'canadahouseprice','david')
+        # convert tuple to List so that itme[4] could be changed from str to int then to be saved in SQL accordingly
+        itemList = []
+        for i in range(len(itme)):
+            item = itme[i]
+            if i == 4 and itme[4].replace(',', '').strip('$').isnumeric():
+                item = int(itme[4].replace(',', '').strip('$'))
+            itemList.append(item)
+        db_handlers.save2sql(itemList,'canadahouseprice','david')
         # print(itme)
         print('Save to Text successfully for city %s'%cityName, datetime.date.today())
 
