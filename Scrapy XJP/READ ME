@@ -13,13 +13,15 @@ Requirements/ Features:
 4. The second spider can collect the data as well as to store in SQL 
 4-1. also the data could be analyzed (TBD)
 
-5. ADDED 31/MAY/2022, Multiprocessing to get more cities house price, and optimize the framwork in house price scrapy
+5. ADD 31/MAY/2022, Multiprocessing to get more cities house price, and optimize the framwork in house price scrapy
 
-6. ADDED 2/JUNE/2022, Image process modules: image binarization, image noise reduction
+6. ADD 2/JUNE/2022, Image process modules: image binarization, image noise reduction
 
-7. ADDED 7/JUNE/2022, MySQL basic operations in Python
+7. ADD 7/JUNE/2022, MySQL basic operations in Python
 
-8. ADDED 7/JUNE/2022, a spider to download pdf or video files from MUN Online website (Memorial University online course website)
+8. ADD 7/JUNE/2022, a spider to download pdf or video files from MUN Online website (Memorial University online course website)
+
+9. ADD 11/JUNE/2022, refine saving to MySQL so that the housePrice could be statistic
 
 Spider-Frame design: 
 Three layers design: 
