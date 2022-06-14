@@ -73,9 +73,9 @@ from email.mime.text import MIMEText
 # send email to @clientMail with @mSubject and content @mBody
 def sendmail(clientMail,mSubject,mBody):
     try:
-        username = 'infopush.auto@gmail.com' #sent mail user name
-        password = 'rqlepdhohratpdmy' #sent mail password(it's not normal password)
-        mail_from = 'infopush.auto@gmail.com' #sent mail user name
+        username = 'infoxxxx@gmail.com' #sent mail user name
+        password = 'xxxxx' #sent mail password(it's not normal password)
+        mail_from = 'infoxxx@gmail.com' #sent mail user name
         mail_bcc = clientMail # it can be 'bcc' or 'cc' or 'to'
         mail_subject = mSubject # mail subject
         mail_body = mBody # mail content
@@ -131,16 +131,7 @@ def sortTextFile(filePath):
     return news
 
 def main():
-    city_dict = {
-        '1': 'toronto',
-        '2': 'ottawa',
-        '3': 'hamilton',
-        '4': 'vancouver',
-        '5': 'calgary',
-        '6': 'edmonton',
-        '7': 'halifax',
-        '8': 'st-johns'}
-    drawHousingPricechart(city_dict)
+  pass
 
 if __name__ == '__main__':
     main()
