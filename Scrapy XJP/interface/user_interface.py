@@ -48,7 +48,8 @@ def spider_HousePrice_Canada():
                     6. Edmonton
                     7. Halifax
                     8. St.John's
-                    9. Exit
+                    9. Draw charts for those cities
+                    10. Exit
             =================== END ===================
             '''
         )
@@ -62,13 +63,17 @@ def spider_HousePrice_Canada():
             '6':'edmonton',
             '7':'halifax',
             '8':'st-johns',
-            '9':'exit'
+            '9': db_handlers.drawHousingPricechart,
+            '10':'exit'
         }
         choice = input('Please select the number: ').strip()
         if choice not in city_dict:
             print('Wrong Number! Please select a new one')
             continue
+        if choice == '10':
+            break
         if choice == '9':
+            city_dict.get(choice)(city_dict)
             break
         scrapy.scrapy_canada_house(city_dict.get(choice))
 
