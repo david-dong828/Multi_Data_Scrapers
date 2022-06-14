@@ -68,11 +68,7 @@ def common_decoration(ax,title):
     ax.set_title(title,fontsize=14,backgroundcolor='y',fontweight='bold',color='black',verticalalignment='center')
 
 def main():
-    x = ['toronto', 'ottawa', 'hamilton', 'vancouver', 'calgary', 'edmonton', 'halifax', 'st-johns']
-    y = [Decimal('1866033.296703'), Decimal('856633.709302'), Decimal('1066032.736264'), Decimal('1988586.862069'), Decimal('824496.467391'), Decimal('551388.293478'), Decimal('628141.561798'), Decimal('367381.927711')]
-    name = 'AVERAGE PRICE'
-    title = 'Each citys average housing price'
-    # bar_draw(x, y,name,title)
+    pass
 
 if __name__ == '__main__':
     main()
