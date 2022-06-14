@@ -5,7 +5,7 @@ import pymysql
 class eDatabase:
     def __init__(self,database=None):
         self._database = database
-        self._db = pymysql.connect(host='localhost', user='xxx', password='xxxx', port=1111, charset='utf8',database=database)
+        self._db = pymysql.connect(host='localhost', user='xxx', password='xxxx', port=1111, charset='utf8',database=database) # need to edit to your SQL server info
         self._cursion = self._db.cursor()
 
     def showDB(self):
@@ -60,7 +60,8 @@ class eDatabase:
 # return db,cursion
 # if no specific database, then return the mySQL-server, cursion
 def connectDB(database = None):
-    db = pymysql.connect(host='localhost', user='root', password='xxx', port=1111, charset='utf8', database=database)
+    # need to edit to your SQL server info
+    db = pymysql.connect(host='localhost', user='root', password='xxx', port=1111, charset='utf8', database=database) 
     cursion = db.cursor()
     return db,cursion
 
@@ -174,33 +175,7 @@ def deleteColumn(db,cursion,columnName,table):
 
 
 def main():
-    # testDB = eDatabase()
-    # testDB.showDB()
-    # testDB = eDatabase('david')
-    # testDB.showTables()
-
-    db,cursion = connectDB()
-    # print(showDB(db,cursion))
-    db, cursion = connectDB('david')
-    # print(showTables(db, cursion),'tables')
-    # newTable(db, cursion,'canadaHousePrice')
-    # print(showTables(db, cursion), 'tables')
-    # describeTable(db,cursion,'xjpinxh')
-    # addColumninTable(db,cursion,'canadahouseprice','city','varchar(50)')
-    # addColumninTable(db, cursion, 'canadahouseprice', 'houseID', 'varchar(15)')
-    # addColumninTable(db, cursion, 'canadahouseprice', 'houseType', 'varchar(30)')
-    # addColumninTable(db, cursion, 'canadahouseprice', 'houseSize', 'varchar(50)')
-    # addColumninTable(db, cursion, 'canadahouseprice', 'housePrice', 'varchar(20)')
-    # addColumninTable(db, cursion, 'canadahouseprice', 'houseLocation', 'text')
-    # addColumninTable(db, cursion, 'canadahouseprice', 'houseLink', 'text')
-    # deleteColumn(db,cursion,'ID','canadahouseprice')
-    # setColumn(db,cursion,'canadahouseprice','houseID','houseID','varchar(15)')
-    setColumn(db, cursion, 'canadahouseprice', 'housePrice', 'housePrice', 'int')
-    # describeTable(db,cursion,'canadahouseprice')
-
-    testData = ["toronto", "17825564", "House", "4bds,3bths", "$6,285,000", "259 FOREST HILL RD  Toronto, ON M5P 2N5", "https://www.royallepage.ca/en/property/ontario/toronto/259-forest-hill-rd/17825564/mlsc5639031/"]
-    # insertDataToTable(db,cursion,testData,'canadahouseprice')
-    queryTable(db,cursion,'canadahouseprice')
+    pass
 
 if __name__ == '__main__':
     main()
