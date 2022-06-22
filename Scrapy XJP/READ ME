@@ -1,30 +1,52 @@
-Purpose: to create spiders based on personal interest
-
-Requirements/ Features:
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Manual:
+1. Download the whole Folder
+2. Run the start.py file
+3. then Enjoy
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Functions:
+========= Welcome to Spider field ========
+1. General spider(stay tuned)
+2. Spider for Chinese Top leaders in XINHUA net
+3. Spider for Chinese Top leaders in RENMIN net(stay tuned)
+4. Spider for XJP in RINMIN net
+5. -->To Send Chinese Top leaders's news 
+6. Spider for RealEstimate price in Canada
+7. Spider for MUN Online downloading PDFs&Videos
+8. Exit
+=================== END ===================
+Notes:
 1. spider can scrapy data from URL provided by user 
 1-1. if there's no related module to parser the URL provided then it should feedback the msg (TBD)
 
-2. to create 2 spcific spiders, one is to collecte data from XINHUN & RENMIN about XIjinPing, another one is to collect Realestimate price from Royal
+2. to create a spcific spiders to collecte data about Chinese Top leaders' latest activity from XINHUN Net.
+   Data will be automatically saved in 'db' folder and SQL simultaneously
+3. to create a spcific spiders to collecte data about Chinese Top leaders' latest activity from RENMIN Net (Code is done but havnt updated here)
+   Data will be automatically saved in 'db' folder and SQL simultaneously
+4. to create a spcific spiders to collecte data about XijinPing's(Chinese Top1 leader) latest activity from RENMIN Net
+   Data will be automatically saved in 'db' folder and SQL simultaneously
+5. To send the latest activities of chinese top leaders thru mail. If there's no lastest one, it will lauch spiders to get the data firstly
 
-3. after collecting data, the fisrt sipder can send notification automatically to user if there's update about XIJINGPING latest activities; 
-3-1. also the data could be saved into SQL
+6. To create a specific spider to collect Real estate price of several major cities from Royal.
+   Data will be automatically saved in 'db' folder and SQL simultaneously
+   Moreover, there's an option inside to choose to analyze the data and draw charts
 
-4. The second spider can collect the data as well as to store in SQL 
-4-1. also the data could be analyzed (TBD)
+Updates:
+1. 31/MAY/2022, ADD Multiprocessing to get more cities house price, and optimize the framwork in house price scrapy
 
-5. ADD 31/MAY/2022, Multiprocessing to get more cities house price, and optimize the framwork in house price scrapy
+2. 2/JUNE/2022, ADD Image process modules: image binarization, image noise reduction
 
-6. ADD 2/JUNE/2022, Image process modules: image binarization, image noise reduction
+3. 7/JUNE/2022, ADD MySQL basic operations in Python
 
-7. ADD 7/JUNE/2022, MySQL basic operations in Python
+4. 7/JUNE/2022, ADD a spider to download pdf or video files from MUN Online website (Memorial University online course website) (Option 7 in main menu now)
 
-8. ADD 7/JUNE/2022, a spider to download pdf or video files from MUN Online website (Memorial University online course website)
+5. 11/JUNE/2022, ADD refine saving to MySQL so that the housePrice could be statistic
 
-9. ADD 11/JUNE/2022, refine saving to MySQL so that the housePrice could be statistic
+6. 13/JUNE/2022, ADD APIs of get min/max/avg/median numbers from MySQL; matplotlib to draw bar chart and line chart
 
-Spider-Frame design: 
-Three layers design: 
+7. 21/JUNE/2011, ADD zip files downloading for MUNONLINE (option 7 spider)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------/
+Spider-Frame design: 3 layers 
 - Interface layer 
 	- src.py 
 	  - show main screen to users and transfer users's selections to user_interface 
