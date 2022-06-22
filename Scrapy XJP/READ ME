@@ -29,7 +29,7 @@ Notes:
 
 6. To create a specific spider to collect Real estate price of several major cities from Royal.
    Data will be automatically saved in 'db' folder and SQL simultaneously
-   Moreover, there's an option inside to choose to analyze the data and draw charts
+   Moreover, there's an submenu inside to choose to analyze the data and draw charts
 
 Updates:
 1. 31/MAY/2022, ADD Multiprocessing to get more cities house price, and optimize the framwork in house price scrapy
