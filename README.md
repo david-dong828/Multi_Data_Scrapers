@@ -22,3 +22,6 @@ Manual:
 Notice: 
 - For some reason, the spider can only download the files shown in current page. Guess it's caused by the cookie since everytime spider gets the current page cookie to porcess the download function.
 - In that case, if you want to download all files of this course, you'd better click Table of Contents in left side area under Course Content.
+
+Update:
+- A new function to download ZIP files has updated in <Folder Scrapy XJP>. You are encouraged to try this function in that more versatile spiders. 
