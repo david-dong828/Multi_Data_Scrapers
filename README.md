@@ -2,7 +2,7 @@
 **Folder Scrapy XJP**
 
 It contains several spiders
-  - To collect Chinese Top leaders' latest activities, such as 习近平，李克强...
+  - To collect Chinese Top leaders' latest activities, such as Xi JinPing(习近平)，Li keqiang(李克强)...
   - To collect Canada several main cities' real estate Price, Toronto, Ottawa, Vancouver...
   - To download files from Memorial online course 
   -  More details could be found in READ ME in that folder
@@ -24,4 +24,4 @@ Notice:
 - In that case, if you want to download all files of this course, you'd better click Table of Contents in left side area under Course Content.
 
 Update:
-- A new function to download ZIP files has updated in <Folder Scrapy XJP>. You are encouraged to try this function in that more versatile spiders. 
+- A new function to download ZIP files has updated in the spider in Folder Scrapy XJP. You are encouraged to try this function in that more versatile spiders. 
