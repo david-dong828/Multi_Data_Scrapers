@@ -96,6 +96,7 @@ def get_house_price(url):
         itemList = []
         for i in range(len(itme)):
             item = itme[i]
+            # filter out invalid data of itme[4]
             if i == 4 and itme[4].replace(',', '').strip('$').isnumeric():
                 item = int(itme[4].replace(',', '').strip('$'))
             itemList.append(item)
@@ -163,7 +164,7 @@ def scrapy_mun(uLink):
         #if the vLink have data feedback, then receive it; otherwise Notify user
         if spiderMUN.get_download_link(vLink,basePath):
             fileNameList,fileLinkList = spiderMUN.get_download_link(vLink,basePath)
-
+            print(fileNameList,fileLinkList)
             # if file links on viewContent page exists, then download them.
             # each viewContent could contain >=1 files, so get them repeatedly
             if fileLinkList:
