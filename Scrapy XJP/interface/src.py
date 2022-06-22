@@ -20,7 +20,7 @@ def run():
         print(
             '''
             ========= Welcome to Spider field ========
-                1. General spider
+                1. General spider(stay tuned)
                 2. Spider for Chinese Top leaders in XINHUA net
                 3. Spider for Chinese Top leaders in RENMIN net(stay tuned)
                 4. Spider for XJP in RINMIN net
