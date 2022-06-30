@@ -10,7 +10,7 @@ It contains several spiders
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **munD2LfileDownload** 
-- It's a spider Used to Download files (pdf , video ) from Memorial University online course wesite https://online.mun.ca/d2l/home
+- It's a spider Used to Download files (pdf , video, zip ) from Memorial University online course wesite https://online.mun.ca/d2l/home
 - Maybe can download ppt files as well (have no chance to test till now)
 - Files after download then save to C:\downloads folder.
 
@@ -25,3 +25,4 @@ Notice:
 
 Update:
 - A new function to download ZIP files has updated in the spider in Folder Scrapy XJP. You are encouraged to try this function in that more versatile spiders. 
+- Now the function to download ZIP files has updated to the single spider - munD2LfileDownload.py
