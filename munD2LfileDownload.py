@@ -38,7 +38,7 @@ def requests_web(url,cookieJar):
         return None
 
 # download files into 'C:\downloads' folder
-def download_file(fileName,fileLink):
+def download_file(fileName,fileLink,cookieJar):
     # BASE_PATH =os.path.dirname(__file__)
     downloadPath = 'C:\downloads'
     if not os.path.exists(downloadPath):
@@ -46,7 +46,7 @@ def download_file(fileName,fileLink):
     USER_PATH = os.path.join(downloadPath,fileName)
 
     try:
-        myfile = requests.get(fileLink)
+        myfile = requests.get(fileLink,cookies=cookieJar)
         if myfile.status_code == 200:
             open(USER_PATH,'wb').write(myfile.content)
             print('Download %s successfully'%fileName)
@@ -116,8 +116,17 @@ def get_download_link(url,cookieJar,basePath):
             content.encoding = 'utf-8'
             soup = BeautifulSoup(content.text,'lxml')
             item = (soup.find(class_="d2l-fileviewer-pdf-pdfjs")) # pdf files are under tag with class="d2l-fileviewer-pdf-pdfjs"
+            pdfNameList = []
+            pdfLinkList = []
             # in case there's no pdf file, another kind of files - Video
             if not item:
+                # in case that the files are neither PDF nor video, like ZIP
+                url1 = '/'.join(url.split('/')[:-3]) + '/topics/files/download/' + url.split('/')[
+                    -2] + '/DirectFileTopicDownload'
+                if requests_web(url,cookieJar): # test to check if this url1 exists
+                    fileTitle = soup.find('title').text+'.zip'
+                    pdfLinkList.append(url1),pdfNameList.append(re.sub('[\\/?*<>:"|]+', '-',fileTitle))
+                    return pdfNameList, pdfLinkList
                 # invoke func to get video link with viewContent page source
                 # if data return, unpack the Name list and Link list and return; otherwise notify users
                 if get_download_link_video(soup,cookieJar,basePath):
@@ -127,8 +136,7 @@ def get_download_link(url,cookieJar,basePath):
                     print('No data feedback from Page! Skip')
                     return None
             # to set empty Lists for pdf file name and links
-            pdfNameList = []
-            pdfLinkList = []
+
             pdfNameList.append(item.get('data-title')+'.pdf')
             pdfLinkList.append(basePath+item.get('data-location'))
             return pdfNameList,pdfLinkList
@@ -136,7 +144,7 @@ def get_download_link(url,cookieJar,basePath):
         return None
 
 def main():
-    url = input('Copy the URL 0f the Course Content Page where you can find the PDFs or Videos: ').strip()
+    url = input('Copy the URL 0f the Course Content Page where you can find the PDFs or Videos or ZIPs: ').strip()
     basePath = 'https://online.mun.ca'
     cookieJar = get_cookie()
     content = requests_web(url,cookieJar)
@@ -148,10 +156,9 @@ def main():
             fileNameList,fileLinkList = get_download_link(vLink,cookieJar,basePath)
             if fileLinkList:
                 for i in range(len(fileLinkList)):
-                    download_file(fileNameList[i],fileLinkList[i])
+                    download_file(fileNameList[i],fileLinkList[i],cookieJar)
             else:
                 print('No download link!')
-
 
 if __name__ == '__main__':
     main()
