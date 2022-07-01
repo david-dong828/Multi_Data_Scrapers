@@ -19,6 +19,12 @@ Manual:
 2. Copy the URL in Couse Content section, URL should be like https://online.mun.ca/d2l/le/content/473098/Home
 3. Run this spider, paste the URL into the spider, then files could be downloaded automatically to C:\downloads folder.
 
+---> Attached a screenshot below for visual instructions <---
+
+![1656637495(1)](https://user-images.githubusercontent.com/106771290/176802672-3775b7f0-f499-49c7-96d9-363cb7c37ec2.png)
+
+
+
 Notice: 
 - For some reason, the spider can only download the files shown in current page. Guess it's caused by the cookie since everytime spider gets the current page cookie to porcess the download function.
 - In that case, if you want to download all files of this course, you'd better click Table of Contents in left side area under Course Content.
